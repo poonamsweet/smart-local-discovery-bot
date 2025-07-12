@@ -1,0 +1,6 @@
+streamlit
+pandas
+openai==0.28
+langchain 
+python-dotenv 
+sentence-transformers

@@ -1,0 +1,7 @@
+[
+  {"name": "Green Leaf Veg Restaurant", "address": "12 MG Road, Bengaluru", "rating": 4.5, "cuisine": "Vegetarian", "location": "MG Road"},
+  {"name": "Veggie Delight", "address": "45 Residency Rd, Bengaluru", "rating": 4.3, "cuisine": "Vegetarian", "location": "Residency Road"},
+  {"name": "Plant Power Café", "address": "88 Brigade Rd, Bengaluru", "rating": 4.2, "cuisine": "Vegan", "location": "Brigade Road"},
+  {"name": "Spice Route", "address": "101 Indiranagar, Bengaluru", "rating": 4.0, "cuisine": "Indian", "location": "Indiranagar"},
+  {"name": "Midnight Bites", "address": "22 Indiranagar, Bengaluru", "rating": 4.1, "cuisine": "Fast Food", "location": "Indiranagar"}
+] 
