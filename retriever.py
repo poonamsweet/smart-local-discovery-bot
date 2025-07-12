@@ -27,27 +27,27 @@ def get_local_results(intent_dict):
     except Exception as e:
         return []
 
-    # Filter by location
+    # here Filter by location
     if location:
         data = [item for item in data if location.lower() in item.get("address", "").lower() or location.lower() in item.get("location", "").lower()]
-    # Filter by date (for events)
+    # here Filter by date (for events)
     if category == "event" and date:
         data = [item for item in data if item.get("date") == date]
 
-    # Sort by rating (if available)
+    # here  Sorting  by rating (if available)
     if data and "rating" in data[0]:
         data = sorted(data, key=lambda x: x["rating"], reverse=True)
 
     return data[:3] 
 
 def semantic_search_local(query, embedding_file="data/restaurants_embeddings.pkl", top_k=3):
-    # Load embeddings and data
+    # here  Load embeddings and data
     with open(embedding_file, "rb") as f:
         obj = pickle.load(f)
     embeddings = obj["embeddings"]
     data = obj["data"]
 
-    # Embed the query
+    # here i am embeddings  the query
     model = SentenceTransformer('all-MiniLM-L6-v2')
     query_vec = model.encode([query])[0]
 

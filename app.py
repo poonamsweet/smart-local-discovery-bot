@@ -26,11 +26,11 @@ for msg in st.session_state["messages"]:
 if prompt := st.chat_input("Type your query here..."):
     st.session_state["messages"].append({"role": "user", "content": prompt})
 
-    # 1. Intent extraction
+    # Intent extraction
     intent = extract_intent_entities(prompt)
     print("Intent:", intent)  # Debug ke liye
 
-    # 2. Semantic retrieval (local RAG)
+    # Semantic retrieval (local RAG)
     if intent.get("category") == "dentist":
         results = semantic_search_local(prompt, "data/dentists_embeddings.pkl", top_k=3)
     elif intent.get("category") == "event":
@@ -38,7 +38,7 @@ if prompt := st.chat_input("Type your query here..."):
     else:
         results = semantic_search_local(prompt, "data/restaurants_embeddings.pkl", top_k=3)
 
-    # 3. Augmented generation (LLM)
+    # Augmented generation (LLM)
     response = generate_answer_with_context(prompt, results)
     st.session_state["messages"].append({"role": "assistant", "content": response})
     st.chat_message("assistant").write(response)
