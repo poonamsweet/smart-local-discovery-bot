@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def get_openai_key():
-    """Get OpenAI API key from Streamlit secrets or environment variable"""
+    """we are getting OpenAI API key from Streamlit secrets or environment variable"""
     try:
         return st.secrets["OPENAI_API_KEY"]
     except (KeyError, FileNotFoundError):

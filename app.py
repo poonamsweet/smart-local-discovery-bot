@@ -15,7 +15,7 @@ if "messages" not in st.session_state:
         {"role": "assistant", "content": "Hi! How can I help you discover something nearby today?"}
     ]
 
-# Display chat history
+# Displaying chat history
 for msg in st.session_state["messages"]:
     if msg["role"] == "user":
         st.chat_message("user").write(msg["content"])

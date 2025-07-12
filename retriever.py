@@ -27,10 +27,10 @@ def get_local_results(intent_dict):
     except Exception as e:
         return []
 
-    # here Filter by location
+    # here Filtering by location
     if location:
         data = [item for item in data if location.lower() in item.get("address", "").lower() or location.lower() in item.get("location", "").lower()]
-    # here Filter by date (for events)
+    # here Filtering by date (for events)
     if category == "event" and date:
         data = [item for item in data if item.get("date") == date]
 
